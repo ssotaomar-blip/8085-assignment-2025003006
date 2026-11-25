@@ -1,0 +1,24 @@
+; Name: Mohamed Omar Abdel Azim
+; Student ID: 2025003006
+; Section: 7
+; Question: Q3 - Count Even and Odd Numbers
+
+LDA 2500H
+MOV C,A
+LXI H,2501H
+MVI D,00H
+MVI E,00H
+LOOP: MOV A,M
+ANI 01H
+JZ EVEN
+INR E
+JMP NEXT
+EVEN: INR D
+NEXT: INX H
+DCR C
+JNZ LOOP
+MOV A,D
+STA 2600H
+MOV A,E
+STA 2601H
+HLT
